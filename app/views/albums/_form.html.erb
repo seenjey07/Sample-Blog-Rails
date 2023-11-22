@@ -1,0 +1,22 @@
+<%= form_with(model: @album, url: albums_path, local: true) do |f| %>
+ 
+  <div>
+    <p>
+      <%= f.label :caption %>
+      <%= f.text_field :caption %>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </p>
+  </div>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <%= link_to 'Back to albums', albums_path %>
+<% end %>

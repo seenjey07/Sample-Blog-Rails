@@ -1,0 +1,7 @@
+<%= form_with(model: @album, url: update_album_path(@album), local: true) do |f| %>
+
+<h1>Edit Album</h1>
+
+<%= render "form", album: @album %>
+
+<% end %>

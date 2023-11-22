@@ -1,0 +1,57 @@
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  li {
+  list-style-type: none;
+  }
+
+</style>
+
+<h1>Albums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Caption</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.caption %></td>
+        <td><%= album.description %></td>
+        <td>
+          <li><%= link_to 'Show', current_album_path(album) %></li>
+          <li><%= link_to 'Edit', edit_album_path(album) %></li>
+          <li><%= link_to 'Delete', delete_album_path(album), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div>
+<%= link_to 'New Album', new_album_path %>
+</div>
