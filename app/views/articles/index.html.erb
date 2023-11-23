@@ -1,13 +1,31 @@
+<style>
+  .article-box:nth-child(even) {
+    background-color: #b3f2dd; 
+  }
+
+  .article-box:nth-child(odd) {
+    background-color: #e08d79; 
+  }
+
+  .article-box {
+    border: 1px double #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
 <p style="color: green"><%= notice %></p>
 
 <h1>Articles</h1>
 
 <div id="articles">
   <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
+    <div class="article-box">
+      <%= render article %>
+      <p>
+        <%= link_to "Show this article", article %>
+      </p>
+    </div>
   <% end %>
 </div>
 

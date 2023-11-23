@@ -1,22 +1,68 @@
+<style>
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  height 100vh;
+}
+
+form {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+p {
+  text-align: center;
+}
+
+</style>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="form-container">
 <%= form_with(model: @album, url: albums_path, local: true) do |f| %>
  
-  <div>
+  <form>
+    <div>
+      <p>
+        <%= f.label :caption %>
+        <%= f.text_field :caption %>
+      </p>
+    </div>
+
+    <div>
+      <p>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </p>
+    </div>
+
     <p>
-      <%= f.label :caption %>
-      <%= f.text_field :caption %>
+      <%= f.submit %>
     </p>
-  </div>
 
-  <div>
-    <p>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </p>
-  </div>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-  <%= link_to 'Back to albums', albums_path %>
-<% end %>
+    <div>
+      <%= link_to 'Back to albums', albums_path %>
+    </div>
+  </form>
+  
+  <% end %>
+</div>
