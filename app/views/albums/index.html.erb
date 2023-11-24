@@ -37,12 +37,33 @@
   }
 
   li {
-  list-style-type: none;
+    list-style-type: none;
+  }
+
+  .delete_button {
+    background-color: transparent; 
+    border: none; 
+    text-decoration: underline; 
+    color: inherit; 
+    cursor: pointer; 
+    padding: 0;
+  }
+
+  .centered-notice {
+    color: green;
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    left: 45%;
   }
 
 </style>
 
-<p style="color: green"><%= notice %></p>
+<nav>
+  <%= link_to "Homepage", root_path %> |
+  <%= link_to 'Posts', posts_path %> |
+  <%= link_to 'Articles', articles_path %>
+</nav>
 
 <h1>Albums</h1>
 
@@ -62,16 +83,17 @@
         <td>
           <li><%= link_to 'Show', current_album_path(album) %></li>
           <li><%= link_to 'Edit', edit_album_path(album) %></li>
-          <li><%= button_to 'Delete', delete_album_path(album), method: :delete %></li>
-
+          <li><%= button_to 'Delete', delete_album_path(album), method: :delete, form_class: 'delete-form', params: { class: 'delete-button' } %></li>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br/>
 
 <div style="text-align: center; font-weight: bold">
 <%= link_to 'New Album', new_album_path %>
 </div>
+
+<p class="centered-notice"><%= notice %></p>

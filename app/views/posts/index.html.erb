@@ -1,16 +1,43 @@
-<p style="color: green"><%= notice %></p>
+<style>
+  .centered-notice {
+    color: green;
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    left: 45%;
+  }
+
+  .content-box {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+  }
+
+</style>
+
+<nav>
+  <%= link_to "Homepage", root_path %> |
+  <%= link_to 'Articles', articles_path %> |
+  <%= link_to 'Albums', albums_path %>
+</nav>  
+
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+<div class="content-box">
+  <div id="posts">
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <p>
+        <%= link_to "Options", post %>
+      </p>
+    <% end %>
+  </div>
 </div>
 
-<div>
-  <%= link_to "New post", new_post_path %>
+<div style="text-align: center; font-weight: bold">
+  <%= link_to "New Post", new_post_path %>
 </div>
+
+<p class="centered-notice"><%= notice %></p>

@@ -1,12 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<style>
+  li {
+    list-style-type: none;
+  }
 
-<%= render @post %>
+  .centered-notice {
+    color: green;
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    left: 45%;
+  }
+</style>
 
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
+  <%= render @post %>
 </div>
 
-<div>
-  <%= button_to "Delete this post", @post, method: :delete %>
-</div>
+<ul>
+  <li><%= link_to "Edit", edit_post_path(@post) %></li>
+  <li><%= link_to "Back", posts_path %></li>
+  <li><%= button_to "Delete", @post, method: :delete %></li>
+</ul>
+
+<p class="centered-notice"><%= notice %></p>
+

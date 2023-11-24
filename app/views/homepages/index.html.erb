@@ -1,8 +1,54 @@
+<style>
+  body {
+    background-image: url('app/assets/images/WhiteTulipsPinkBG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: #fff;
+    background-color: #333; 
+    padding: 10px;
+  }
+
+  nav {
+    text-align: center;
+    background-color: #555;
+    padding: 5px; 
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px; 
+  }
+
+  .welcome_message {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12pt;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 10px;
+  }
+</style>
+
+
 <h1>YourPage!</h1>
-<p><%= @introduction %></p>
 
 <nav>
-  <%= link_to 'Posts', posts_path %>
-  <%= link_to 'Articles', articles_path %>
+  <%= link_to 'Posts', posts_path %> |
+  <%= link_to 'Articles', articles_path %> |
   <%= link_to 'Albums', albums_path %>
 </nav>
+
+<div class="welcome_message">
+  <p><%= "Welcome to YourPage!, our vibrant blogging community, where expression knows no bounds! Our platform provides a space for you to share your thoughts, inspirations, and creations. Whether you prefer conveying concise messages, crafting insightful articles with captivating titles and descriptions, or curating photo albums to tell a visual story, YourPage is the canvas for your creativity." %></p>
+  <p><%= "Join us on this journey of self-expression, connection, and discovery. Unleash your ideas, engage with like-minded individuals, and explore the diverse tapestry of stories woven by our community members. From short messages that pack a punch to thought-provoking articles and visually stunning albums, every contribution adds a unique brushstroke to the collective masterpiece." %></p>
+  <p><%= "Discover, connect, and share your voice with the world on YourPage!—where words, ideas, and visuals come together to create a mosaic of perspectives. Welcome to a place where your stories find a home and your creativity takes center stage." %></p>
+</div>
+
