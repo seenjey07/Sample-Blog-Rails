@@ -1,43 +1,41 @@
-<style>
-  .centered-notice {
-    color: green;
-    text-align: center;
-    position: fixed;
-    bottom: 5%;
-    left: 45%;
-  }
-
-  .content-box {
-    border: 2px solid #000000;
-    border-radius: 10px;
-    padding: 5px 10px 5px 10px;
-    margin: 10px;
-  }
-
-</style>
-
 <nav>
   <%= link_to "Homepage", root_path %> |
   <%= link_to 'Articles', articles_path %> |
   <%= link_to 'Albums', albums_path %>
 </nav>  
 
-
 <h1>Posts</h1>
 
 <div class="content-box">
-  <div id="posts">
-    <% @posts.each do |post| %>
-      <%= render post %>
-      <p>
-        <%= link_to "Options", post %>
-      </p>
-    <% end %>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Post</th>
+        <th>Options</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td class="post-box">
+              <%= render post %>
+            </td>
+            <td>
+             <p dom_id="edit-post"> <%= link_to "Edit", edit_post_path(post) %> </p>
+              <%= button_to "Delete", post, method: :delete, form_class: 'delete-form', params: { class: 'delete-button' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
 </div>
+
+<br/>
 
 <div style="text-align: center; font-weight: bold">
   <%= link_to "New Post", new_post_path %>
 </div>
 
-<p class="centered-notice"><%= notice %></p>
+<div>
+  <p class="centered-notice"><%= notice %></p>
+</div>

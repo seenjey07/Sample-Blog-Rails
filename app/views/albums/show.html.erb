@@ -1,11 +1,13 @@
 <%= form_with(model: @album, url: current_album_path, local: true) do |f| %>
 
-<h1><%= @album.caption %></h1>
+  <h1><%= @album.caption %></h1>
 
-<p>This should show pictures</p>
+  <div class="picture_table">
+    This should show pictures
+  </div>
 
-<br>
+  <br>
 
-<%= link_to 'Back to albums', albums_path %>
+  <%= link_to 'Back to albums', albums_path %>
 
 <% end %>

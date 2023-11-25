@@ -12,16 +12,20 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :Title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
+  <div dom_id="article_body_input">
+    <%= form.label :Content, style: "display: block" %>
     <%= form.text_area :body %>
   </div>
 
-  <div>
+  <div >
     <%= form.submit %>
   </div>
 <% end %>
+
+<div>
+  <p class="centered-notice"><%= notice %></p>
+</div>
