@@ -1,33 +1,26 @@
 <div class="form-container">
 <%= form_with(model: @album, url: albums_path, local: true) do |f| %>
  
-  <form>
     <div>
-      <p>
-        <%= f.label :caption %>
-        <%= f.text_field :caption %>
-      </p>
+      <strong><%= f.label :caption %></strong>
+      <%= f.text_field :caption %>
     </div>
 
     <div>
-      <p>
-        <%= f.label :description %>
-        <%= f.text_field :description %>
-      </p>
+    <strong><%= f.label :description %></strong>
+      <%= f.text_area :description %>
     </div>
-
-    <p>
-      <%= f.submit %>
-    </p>
 
     <div>
-      <%= link_to 'Back to albums', albums_path %>
+      <strong><%= f.submit %></strong>
     </div>
-  </form>
-  
+
+    <% if @album.errors[:caption].present? || @album.errors[:description].present? %>
+    <div style="color: red">
+      Caption and Description can't be empty.
+    </div>
   <% end %>
-</div>
+<% end %>
 
-<div>
-  <p class="centered-notice"><%= notice %></p>
+  <p style= "padding: 0; margin: 0;"><%= link_to 'Back to Albums', albums_path %></p>
 </div>

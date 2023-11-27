@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [ :show, :edit, :update, :destroy]
   def index
-    @albums = Album.all
+    @albums = Album.order(created_at: :desc).all
   end
 
   def new
@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
 
     if @album.save
-      redirect_to albums_path, notice: "Album was successfully created."
+      redirect_to albums_path
     else
       render :new
     end
@@ -26,18 +26,15 @@ class AlbumsController < ApplicationController
 
   def update
     if @album.update(album_params)
-      redirect_to albums_path, notice: 'Album was successfully updated.'
+      redirect_to albums_path
     else
       render :edit
     end
   end
 
   def destroy
-    if @album.destroy
-      redirect_to albums_path, notice: 'Album was successfully deleted.'
-    else
-      redirect_to albums_path, alert: 'Failed to delete the album.'
-    end
+    @album.destroy
+      redirect_to albums_path
   end
 
 private

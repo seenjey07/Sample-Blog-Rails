@@ -14,43 +14,28 @@
  *= require_self
  */
 
-body {
-  background-color: teal;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .welcome_message {
-  text-align: center;
-  font-size: 12pt;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 20px;
+  text-align: center;
+  background-color: wheat;
+  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.delete_button {
+.button {
   background-color: transparent;
   border: none;
-  text-decoration: underline;
-  color: inherit;
   cursor: pointer;
-  padding: 0;
 }
 
-.centered-notice {
-  color: green;
-  text-align: center;
-  position: fixed;
-  bottom: 2%;
-  left: 45%;
-  transform: translate(-50%, -50%);
+.table-container {
+  max-height: 72vh;
+  overflow-y: auto;
 }
 
 table {
@@ -58,6 +43,7 @@ table {
   border-collapse: collapse;
   width: 90%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
 th,
@@ -109,20 +95,32 @@ nav a {
 }
 
 .form-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-form {
+  margin: 20px auto;
   width: 400px;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #f59f28;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.delete-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 label {
@@ -137,6 +135,64 @@ input {
   box-sizing: border-box;
 }
 
-p {
+.posts-table,
+.articles-table,
+.albums-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.post-column {
+  width: 85%;
+}
+
+.options-column {
+  width: 15%;
+}
+
+.post-details,
+.article_details,
+.album-details {
   text-align: center;
+  margin: 0;
+  padding: 1px;
+  font-size: 10pt;
+}
+
+#post_name,
+#album_description,
+#article_body {
+  font-size: 11pt;
+  width: 350px;
+  height: 100px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#album_caption {
+  width: 355px;
+  padding: 3px;
+}
+
+.caption-column,
+.description-column {
+  width: 30%;
+}
+
+.actions-column {
+  width: 15%;
+}
+
+.show-picture-actions,
+.picture_table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture_table {
+  margin: 5px;
+  padding: 5px;
+  background-color: #f0cea0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }

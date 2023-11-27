@@ -1,13 +1,11 @@
-<%= form_with(model: @album, url: current_album_path, local: true) do |f| %>
-
-  <h1><%= @album.caption %></h1>
+<h1><%= @album.caption %></h1>
 
   <div class="picture_table">
     This should show pictures
   </div>
 
-  <br>
-
-  <%= link_to 'Back to albums', albums_path %>
-
-<% end %>
+  <div class="show-picture-actions">
+    <li style="padding-right: 5px; padding-left: 5px;"><%= link_to 'Edit', edit_album_path(@album) %></li> |
+    <li style="padding-right: 5px; padding-left: 5px;"><%= button_to 'Delete', delete_album_path(@album), method: :delete, form_class: 'delete-form', params: { class: 'delete-button' } %></li> |
+    <li style="padding-left: 5px;"><%= link_to 'Back to Albums', albums_path %></li>
+  </div>

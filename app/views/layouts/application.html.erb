@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>RailsProject</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <html>
+    <head>
+      <title>Simple Blog App - YourPage!</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_importmap_tags %>
+    </head>
+
+    <body style="margin: 10px; padding: 10px; background-image: url('<%= asset_path('WhiteTulipsPinkBG.jpg') %>'); background-size: cover; background-repeat: no-repeat;">
+      <%= yield %>
+    </body>
+  </html>

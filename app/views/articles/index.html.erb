@@ -6,34 +6,32 @@
 
 <h1>Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Article Details</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-     <tr>
-        <td class="article-box">
-          <%= render article %>
-        </td>
-        <td>
-          <%= link_to "Edit", edit_article_path(article) %> |
-          <%= button_to "Delete", article, method: :delete, form_class: 'delete-form', params: { class: 'delete-button' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-  </br>
- 
-  <div style="text-align: center; font-weight: bold">
-    <%= link_to "New Article", new_article_path %>
-  </div>
-
+<div class="table-container">
   <div>
-    <p class="centered-notice"><%= notice %></p>
+    <table class="articles-table">
+      <thead>
+        <tr>
+          <th class="article-column">Article Details</th>
+          <th class="options-column">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+            <td class="article-column">
+              <%= render article %>
+            </td>
+            <td class="options-column">
+              <%= link_to "Edit", edit_article_path(article) %>
+              <%= button_to "Delete", article, method: :delete, form_class: 'delete-form', params: { class: 'delete-button' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div style="position: absolute; text-align: center; margin: 2px; padding: 2px; font-weight: bold; bottom: 0;">
+    <%= link_to "New Article", new_article_path %>
   </div>
